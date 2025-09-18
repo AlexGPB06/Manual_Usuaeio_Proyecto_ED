@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases del Proyecto - Banco Financiero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<nav>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="index.html">Banco Financiero</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Manual</a></li>
+            <li><a href="clases.html" class="active">Clases</a></li>
+            <li><a href="quienes_somos.html">Quiénes Somos</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container">
+        <header>
+            <h1>Descripción de Clases Java</h1>
+            <p>Componentes clave que dan vida al sistema del Banco Financiero.</p>
+        </header>
+        <main>
+            <div class="accordion-item">
+                <button class="accordion-header">Main.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Es el cerebro y el punto de entrada de toda la aplicación. Se encarga de controlar los menús, gestionar el flujo del programa y coordinar las interacciones entre el usuario y las estructuras de datos.</p>
+                    <p><strong>Contribución:</strong> Actúa como el "director de orquesta", inicializando los datos de los clientes y llamando a las funciones correspondientes según las selecciones del usuario.</p>
+                    <strong>Métodos Principales:</strong>
+                    <ul>
+                        <li><code>main()</code>: Inicia el programa y muestra el menú de bienvenida (login/registro).</li>
+                        <li><code>mostrarMenuDelBanco()</code>: Gestiona el menú principal del usuario una vez que ha iniciado sesión, conteniendo toda la lógica de las operaciones bancarias.</li>
+                        <li><code>iniciarSesion() / registrarCliente()</code>: Controlan los flujos de autenticación y creación de nuevos usuarios.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">Cliente.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Es una clase de tipo "modelo" (POJO) que representa la estructura de un cliente del banco. Almacena toda la información personal y financiera de un usuario.</p>
+                    <p><strong>Contribución:</strong> Sirve como el plano o plantilla para cada usuario del sistema. Sin esta clase, no habría forma de almacenar de manera organizada los datos de los clientes.</p>
+                    <strong>Atributos Principales:</strong>
+                    <ul>
+                        <li><code>ID</code>: Identificador único para cada cliente.</li>
+                        <li><code>Nombre</code>: Nombre completo del cliente.</li>
+                        <li><code>Monto</code>: Saldo en la cuenta principal.</li>
+                        <li><code>montoAhorros</code>: Saldo guardado en la Caja de Ahorros.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">HashTable.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Es la estructura de datos principal para almacenar a todos los clientes. Utiliza el número de tarjeta como "clave" para guardar y acceder a cada objeto `Cliente`.</p>
+                    <p><strong>Contribución:</strong> Proporciona un acceso casi instantáneo a la información de cualquier cliente, lo que hace que el inicio de sesión y la validación de transferencias sean extremadamente rápidos y eficientes.</p>
+                    <strong>Métodos Principales:</strong>
+                    <ul>
+                        <li><code>put(clave, valor)</code>: Inserta un nuevo cliente en la tabla usando su tarjeta como clave.</li>
+                        <li><code>get(clave)</code>: Busca y devuelve un cliente a partir de su número de tarjeta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Stack.java (Pila)</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Implementa una estructura de datos LIFO (Last-In, First-Out), es decir, el último elemento que entra es el primero que sale.</p>
+                    <p><strong>Contribución:</strong> Se utiliza para gestionar el **Historial de Movimientos**. Cada nueva transacción se "apila" encima de la anterior, por lo que al mostrar el historial, se ven las operaciones más recientes primero, que es el comportamiento esperado.</p>
+                    <strong>Métodos Principales:</strong>
+                    <ul>
+                        <li><code>push(dato)</code>: Añade una nueva transacción al tope de la pila.</li>
+                        <li><code>showAll()</code>: Muestra todos los elementos desde el más reciente al más antiguo.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">BinaryTreeBancario.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Implementa un Árbol Binario de Búsqueda diseñado para organizar objetos `Cliente`.</p>
+                    <p><strong>Contribución:</strong> Su principal función en el menú principal es la de **herramienta de ordenamiento bajo demanda**. En el historial, se crea un árbol temporal para ordenar los montos de las transacciones de forma muy eficiente sin tener que usar un algoritmo de ordenamiento sobre un arreglo.</p>
+                    <strong>Métodos Principales:</strong>
+                    <ul>
+                        <li><code>insertarCliente(cliente)</code>: Inserta un cliente en el árbol, manteniéndolo ordenado por ID.</li>
+                        <li><code>mostrarIdsEnOrden()</code>: Recorre el árbol e imprime los IDs (usados para los montos) en orden ascendente.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
