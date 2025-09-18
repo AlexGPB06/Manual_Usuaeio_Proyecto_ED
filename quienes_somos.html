@@ -21,17 +21,55 @@
         </ul>
     </div>
 </nav>
+<meta name="About Us">
+<style>
+.container {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+}
 
+.container {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container span {
+    font-size: 20px;
+    margin-right: 15px;
+}
+@media (max-width: 500px) {
+    .container{
+        text-align: center;
+    }
+    .container img {
+        margin: auto;
+        float: none;
+        display: block;
+    }
+}
+</style>
+</meta>
     <div class="container">
         <header>
-            <h1>Nosootros</h1>
+            <h1>Nosotros</h1>
             <p>Informacion sobre las personas que trabajaron en este Proyecto.</p>
+            <p>O el equipo llamado <strong>Los Descompiladores</strong></p>
         </header>
         <main>
 
             <div class="container">
                     <img src="Imagenes/KEROJAM.jpg" alt="KEROJAM" style="width:90px">
-                    <p><span>KEROJAM</span> Es el <strong>punto de entrada y el cerebro</strong> de la versión de consola de la aplicación. Orquesta todo el flujo del programa.</p>
+                    <p><span>KEROJAM</span>Fundador y Desarrollador del Programa</p>
                     <p><strong>Uso en el Programa:</strong> Inicia el sistema, carga los clientes iniciales y presenta los menús de texto al usuario para que interactúe.</p>
                     <strong>Métodos Clave y su Aplicación:</strong>
             </div>
@@ -65,7 +103,7 @@
             </div>
         </main>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
