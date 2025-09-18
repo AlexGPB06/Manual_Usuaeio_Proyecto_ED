@@ -28,31 +28,45 @@
             <p>Componentes clave que dan vida al sistema del Banco Financiero.</p>
         </header>
         <main>
+
             <div class="accordion-item">
                 <button class="accordion-header">Main.java</button>
                 <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Es el cerebro y el punto de entrada de toda la aplicación. Se encarga de controlar los menús, gestionar el flujo del programa y coordinar las interacciones entre el usuario y las estructuras de datos.</p>
-                    <p><strong>Contribución:</strong> Actúa como el "director de orquesta", inicializando los datos de los clientes y llamando a las funciones correspondientes según las selecciones del usuario.</p>
-                    <strong>Métodos Principales:</strong>
+                    <p><strong>Descripción:</strong> Es el <strong>punto de entrada y el cerebro</strong> de la versión de consola de la aplicación. Orquesta todo el flujo del programa.</p>
+                    <p><strong>Uso en el Programa:</strong> Inicia el sistema, carga los clientes iniciales y presenta los menús de texto al usuario para que interactúe.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
                     <ul>
-                        <li><code>main()</code>: Inicia el programa y muestra el menú de bienvenida (login/registro).</li>
-                        <li><code>mostrarMenuDelBanco()</code>: Gestiona el menú principal del usuario una vez que ha iniciado sesión, conteniendo toda la lógica de las operaciones bancarias.</li>
-                        <li><code>iniciarSesion() / registrarCliente()</code>: Controlan los flujos de autenticación y creación de nuevos usuarios.</li>
+                        <li><code>main()</code>: Es el primer método que se ejecuta. Su función es <strong>arrancar la aplicación</strong>, crear la tabla hash de clientes y mostrar el menú de bienvenida (login/registro).</li>
+                        <li><code>mostrarMenuDelBanco()</code>: Se activa <strong>después de un inicio de sesión exitoso</strong>. Contiene el bucle principal con las opciones bancarias (depositar, retirar, etc.) y gestiona las llamadas a las funciones correspondientes.</li>
+                        <li><code>iniciarSesion() / registrarCliente()</code>: Se utilizan en el menú de bienvenida para <strong>controlar el acceso y la creación de nuevos usuarios</strong>, validando los datos introducidos por el usuario.</li>
                     </ul>
                 </div>
             </div>
-            
+
+            <div class="accordion-item">
+                <button class="accordion-header">BancoUI.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Es el punto de entrada y controlador para la <strong>versión con Interfaz Gráfica de Usuario (GUI)</strong> del proyecto.</p>
+                    <p><strong>Uso en el Programa:</strong> Reemplaza la consola por una experiencia visual. Dibuja las ventanas, botones y campos de texto, y captura las acciones del usuario (clics) para ejecutar la lógica del banco.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>main()</code>: <strong>Inicia la aplicación gráfica</strong>, creando y mostrando la ventana principal del programa.</li>
+                        <li><code>crearLoginPanel() / crearMainMenuPanel()</code>: Se encargan de <strong>construir las diferentes pantallas</strong> de la interfaz (la de inicio de sesión y el menú principal del cliente).</li>
+                        <li><code>intentarLogin()</code>: Se ejecuta cuando el usuario <strong>hace clic en el botón "Iniciar Sesión"</strong>. Toma los datos de los campos de texto y los valida.</li>
+                        <li><code>accionDepositar() / accionRetirar()</code>: Son los manejadores de eventos para los botones de operaciones. Por ejemplo, <code>accionDepositar()</code> se activa al pulsar "Realizar Depósito" y <strong>muestra el diálogo para introducir el monto</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="accordion-item">
                 <button class="accordion-header">Cliente.java</button>
                 <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Es una clase de tipo "modelo" (POJO) que representa la estructura de un cliente del banco. Almacena toda la información personal y financiera de un usuario.</p>
-                    <p><strong>Contribución:</strong> Sirve como el plano o plantilla para cada usuario del sistema. Sin esta clase, no habría forma de almacenar de manera organizada los datos de los clientes.</p>
-                    <strong>Atributos Principales:</strong>
+                    <p><strong>Descripción:</strong> Es la clase que actúa como <strong>modelo de datos</strong>. Representa la estructura y la información de un cliente.</p>
+                    <p><strong>Uso en el Programa:</strong> Es el "plano" para cada usuario. Cada objeto <code>Cliente</code> almacena de forma organizada todos los datos de un usuario, que son manipulados por el resto del sistema.</p>
+                     <strong>Atributos y Métodos Clave:</strong>
                     <ul>
-                        <li><code>ID</code>: Identificador único para cada cliente.</li>
-                        <li><code>Nombre</code>: Nombre completo del cliente.</li>
-                        <li><code>Monto</code>: Saldo en la cuenta principal.</li>
-                        <li><code>montoAhorros</code>: Saldo guardado en la Caja de Ahorros.</li>
+                        <li><strong>Atributos (ID, Nombre, Monto, etc.)</strong>: Son utilizados constantemente para <strong>mostrar la información del cliente en pantalla</strong> (en la consola o en la GUI) y para <strong>realizar cálculos</strong> en las transacciones.</li>
+                        <li><code>Depositar(monto)</code>: Este método es llamado directamente desde los menús (<code>Main</code> y <code>BancoUI</code>) para <strong>actualizar el saldo del cliente</strong> cuando se realiza un depósito.</li>
                     </ul>
                 </div>
             </div>
@@ -60,12 +74,13 @@
             <div class="accordion-item">
                 <button class="accordion-header">HashTable.java</button>
                 <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Es la estructura de datos principal para almacenar a todos los clientes. Utiliza el número de tarjeta como "clave" para guardar y acceder a cada objeto `Cliente`.</p>
-                    <p><strong>Contribución:</strong> Proporciona un acceso casi instantáneo a la información de cualquier cliente, lo que hace que el inicio de sesión y la validación de transferencias sean extremadamente rápidos y eficientes.</p>
-                    <strong>Métodos Principales:</strong>
+                    <p><strong>Descripción:</strong> Estructura de datos principal para almacenar a todos los clientes, usando el número de tarjeta como clave.</p>
+                    <p><strong>Uso en el Programa:</strong> Es la "base de datos" del sistema, permitiendo un acceso y validación de usuarios extremadamente rápido.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
                     <ul>
-                        <li><code>put(clave, valor)</code>: Inserta un nuevo cliente en la tabla usando su tarjeta como clave.</li>
-                        <li><code>get(clave)</code>: Busca y devuelve un cliente a partir de su número de tarjeta.</li>
+                        <li><code>put(clave, valor)</code>: Se utiliza al <strong>registrar un nuevo cliente</strong> para guardarlo en el sistema, asociando su número de tarjeta (clave) con su objeto <code>Cliente</code> (valor).</li>
+                        <li><code>get(clave)</code>: Es fundamental en el <strong>inicio de sesión y en las transferencias</strong>. Permite buscar y obtener los datos de un cliente de forma instantánea solo conociendo su número de tarjeta.</li>
+                        <li><code>contains(clave)</code>: Se usa durante el <strong>proceso de registro</strong> para verificar si un número de tarjeta ya existe y así evitar clientes duplicados.</li>
                     </ul>
                 </div>
             </div>
@@ -73,25 +88,77 @@
             <div class="accordion-item">
                 <button class="accordion-header">Stack.java (Pila)</button>
                 <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Implementa una estructura de datos LIFO (Last-In, First-Out), es decir, el último elemento que entra es el primero que sale.</p>
-                    <p><strong>Contribución:</strong> Se utiliza para gestionar el **Historial de Movimientos**. Cada nueva transacción se "apila" encima de la anterior, por lo que al mostrar el historial, se ven las operaciones más recientes primero, que es el comportamiento esperado.</p>
-                    <strong>Métodos Principales:</strong>
+                    <p><strong>Descripción:</strong> Implementa una estructura de datos LIFO (Last-In, First-Out).</p>
+                    <p><strong>Uso en el Programa:</strong> Es el motor del <strong>Historial de Movimientos</strong>, mostrando siempre la transacción más reciente primero.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
                     <ul>
-                        <li><code>push(dato)</code>: Añade una nueva transacción al tope de la pila.</li>
-                        <li><code>showAll()</code>: Muestra todos los elementos desde el más reciente al más antiguo.</li>
+                        <li><code>push(dato)</code>: Se llama <strong>después de cada operación exitosa</strong> (depósito, retiro, transferencia) para "apilar" un texto descriptivo de la transacción en el historial del cliente.</li>
+                        <li><code>showAll()</code>: Se utiliza cuando el usuario selecciona la opción de <strong>ver su historial</strong>, para mostrar en pantalla todos los movimientos almacenados, del más reciente al más antiguo.</li>
                     </ul>
                 </div>
             </div>
-            
+
+            <div class="accordion-item">
+                <button class="accordion-header">Queue.java (Cola)</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Implementa una estructura de datos FIFO (First-In, First-Out), donde el primer elemento en entrar es el primero en salir.</p>
+                    <p><strong>Uso en el Programa:</strong> Gestiona las transferencias para que puedan ser procesadas en el orden en que se solicitaron.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>enqueue(monto)</code>: Se llama cada vez que se realiza una <strong>transferencia exitosa</strong>, añadiendo el monto transferido al final de la cola.</li>
+                        <li><code>dequeue()</code>: Se utiliza en la opción "Realizar Transferencias" del menú de consola para <strong>procesar y eliminar la transacción más antigua</strong> de la cola.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">LinkedList.java y Node.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> <code>Node</code> es la clase que representa un eslabón individual, conteniendo un dato y enlaces al nodo siguiente y anterior. <code>LinkedList</code> es la clase que gestiona estos nodos para formar una lista enlazada.</p>
+                    <p><strong>Uso en el Programa:</strong> Son las <strong>estructuras fundamentales de bajo nivel</strong> sobre las que se construyen <code>Stack</code> y <code>Queue</code>. En lugar de usar las listas predefinidas de Java, el proyecto utiliza estas clases personalizadas para demostrar el funcionamiento interno de las estructuras de datos.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>Node(valData)</code>: Es el constructor que se usa en <code>Stack</code> y <code>Queue</code> para <strong>crear un nuevo "contenedor"</strong> cada vez que se añade un elemento.</li>
+                        <li><code>printList()</code>: Método de <code>LinkedList</code> que permite <strong>recorrer e imprimir el contenido</strong> de la lista, usado por <code>Queue</code> para mostrar las transferencias pendientes.</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="accordion-item">
                 <button class="accordion-header">BinaryTreeBancario.java</button>
                 <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Implementa un Árbol Binario de Búsqueda diseñado para organizar objetos `Cliente`.</p>
-                    <p><strong>Contribución:</strong> Su principal función en el menú principal es la de **herramienta de ordenamiento bajo demanda**. En el historial, se crea un árbol temporal para ordenar los montos de las transacciones de forma muy eficiente sin tener que usar un algoritmo de ordenamiento sobre un arreglo.</p>
-                    <strong>Métodos Principales:</strong>
+                    <p><strong>Descripción:</strong> Implementa un Árbol Binario de Búsqueda para organizar valores numéricos de forma ordenada.</p>
+                    <p><strong>Uso en el Programa:</strong> Se utiliza como una herramienta de ordenamiento bajo demanda para el historial de transacciones.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
                     <ul>
-                        <li><code>insertarCliente(cliente)</code>: Inserta un cliente en el árbol, manteniéndolo ordenado por ID.</li>
-                        <li><code>mostrarIdsEnOrden()</code>: Recorre el árbol e imprime los IDs (usados para los montos) en orden ascendente.</li>
+                        <li><code>insertarCliente(clienteFalso, "Historial")</code>: Aunque el nombre dice "Cliente", se usa de forma ingeniosa. Cuando el usuario quiere ordenar su historial, este método se llama repetidamente para <strong>insertar cada monto de transacción</strong> en el árbol.</li>
+                        <li><code>mostrarIdsEnOrden()</code>: Inmediatamente después de que el árbol se ha llenado con los montos, se llama a este método para <strong>recorrer el árbol e imprimir los montos en orden ascendente</strong> en la pantalla.</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="accordion-item">
+                <button class="accordion-header">ValidadorTarjeta.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Es una clase de utilidad que contiene métodos estáticos para verificar la validez y el tipo de un número de tarjeta de crédito.</p>
+                    <p><strong>Uso en el Programa:</strong> Actúa como una herramienta de seguridad y validación de datos de entrada.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>validarTarjeta(numero)</code>: Se llama durante el <strong>registro y el inicio de sesión</strong>. Utiliza el algoritmo de Luhn para confirmar que el número de tarjeta introducido por el usuario es matemáticamente válido.</li>
+                        <li><code>obtenerTipoTarjeta(numero)</code>: Se usa después de una validación exitosa para <strong>identificar y mostrar la marca de la tarjeta</strong> (ej. Visa, MasterCard), mejorando la experiencia del usuario.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">AlgoritmosBancarios.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Clase de utilidad que agrupa algoritmos de recursividad y "Divide y Vencerás".</p>
+                    <p><strong>Aplicación:</strong> Se ha integrado en el menú principal para ofrecer una función de análisis: "Ver cliente con mayor saldo".</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>encontrarClienteMayorSaldo(clientes, inicio, fin)</code>: Este es el método de "divide y vencerás" que se llama cuando el usuario selecciona la opción 7 del menú. <strong>Divide la lista de clientes a la mitad repetidamente</strong> para encontrar de forma eficiente al cliente con el saldo más alto.</li>
+                        <li><code>calcularInteresCompuesto(capital, tasa, tiempo)</code>: Es el método recursivo utilizado en la <strong>"Caja de Ahorros"</strong> para calcular y mostrar la proyección de crecimiento de la inversión del usuario.</li>
                     </ul>
                 </div>
             </div>
