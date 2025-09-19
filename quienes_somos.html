@@ -17,43 +17,46 @@
         <ul>
             <li><a href="index.html">Manual</a></li>
             <li><a href="clases.html">Clases</a></li>
-            <li><a href="quienes_somos.html" class = "active"Quiénes Somos>QuienesSomos</a></li>
+            <li><a href="quienes_somos.html" class="active">Quiénes Somos</a></li>
         </ul>
     </div>
 </nav>
-<meta name="About Us">
 <style>
-.container {
-    border: 2px solid #ccc;
-    background-color: #eee;
-    border-radius: 5px;
-    padding: 106px;
-    margin: 16px 0;
+.profile-container {
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
 }
 
-.container {
-  content: "";
-  clear: both;
-  align-content: center;
-  max-width: 1200px;
+.profile-container::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.container img {
+.profile-container img {
     float: left;
     margin-right: 20px;
     border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
 }
 
-.container span {
-    font-size: 20px;
+.profile-container span {
+    font-size: 1.2rem;
     margin-right: 15px;
+    color: var(--primary-color);
 }
-@media (max-width: 800px) {
-    .container{
+
+@media (max-width: 768px) {
+    .profile-container {
         text-align: center;
     }
-    .container img {
-        margin: auto;
+    .profile-container img {
+        margin: 0 auto 1rem auto;
         float: none;
         display: block;
     }
@@ -67,8 +70,8 @@
         </header>
         <main>
 
-            <div class="container">
-                    <img src="Imagenes/KEROJAM.jpg" alt="KEROJAM" style="width:90px">
+            <div class="profile-container">
+                    <img src="Imagenes/KEROJAM.jpg" alt="KEROJAM">
                     <p><strong><span>KEROJAM</span></strong><i>Fundador y Desarrollador del Programa</i></p>
                     <p><strong>Uso en el Programa:</strong> Inicia el sistema, carga los clientes iniciales y presenta los menús de texto al usuario para que interactúe.</p>
                     <strong>Métodos Clave y su Aplicación:</strong>
