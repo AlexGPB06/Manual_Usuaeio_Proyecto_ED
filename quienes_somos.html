@@ -70,6 +70,13 @@ body {
     color: var(--primary-color);
 }
 
+/* Profile container with image on the right */
+.profile-container.image-right img {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
 @media (max-width: 768px) {
     .profile-container {
         text-align: center;
@@ -95,14 +102,14 @@ body {
                     <p><strong>Uso en el Programa:</strong> Inicia el sistema, carga los clientes iniciales y presenta los menús de texto al usuario para que interactúe.</p>
             </div>
 
-            <div class="profile-container">
-                <img src="Imagenes/Hugo.jpg" alt="Hugoat">
+            <div class="profile-container image-right">
+                <img src="Imagenes/Alex.jpg" alt="Hugoat">
                 <p><strong><span>Alex Garcia</span></strong> <i>Fundador y Desarrollador del Programa</i></p>
                     <p><strong>Uso en el Programa:</strong> Reemplaza la consola por una experiencia visual. Dibuja las ventanas, botones y campos de texto, y captura las acciones del usuario (clics) para ejecutar la lógica del banco.</p>
             </div>
 
             <div class="profile-container">
-                <img src="Imagenes/Alex.jpg" alt="Alex">
+                <img src="Imagenes/Hugo.jpg" alt="Alex">
                 <p><strong><span>Hugo Ruiz</span></strong><i>Fundador y Desarrollador del Programa</i></p>
                     <p><strong>Uso en el Programa:</strong> Es el "plano" para cada usuario. Cada objeto <code>Cliente</code> almacena de forma organizada todos los datos de un usuario, que son manipulados por el resto del sistema.</p>
             </div>
