@@ -90,38 +90,21 @@ body {
         <main>
 
             <div class="profile-container">
-                    <img src="Imagenes/KEROJAM.jpg" alt="KEROJAM">
-                    <p><strong><span>KEROJAM</span></strong><i>Fundador y Desarrollador del Programa</i></p>
+                    <img src="Imagenes/Majorek.jpg" alt="KEROJAM">
+                    <p><strong><span>Majorek Casas</span></strong><i>Fundador y Desarrollador del Programa</i></p>
                     <p><strong>Uso en el Programa:</strong> Inicia el sistema, carga los clientes iniciales y presenta los menús de texto al usuario para que interactúe.</p>
-                    <strong>Métodos Clave y su Aplicación:</strong>
             </div>
 
-            <div class="accordion-item">
-                <button class="accordion-header">BancoUI.java</button>
-                <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Es el punto de entrada y controlador para la <strong>versión con Interfaz Gráfica de Usuario (GUI)</strong> del proyecto.</p>
+            <div class="profile-container">
+                <img src="Imagenes/Hugo.jpg" alt="Hugoat">
+                <p><strong><span>Alex Garcia</span></strong> <i>Fundador y Desarrollador del Programa</i></p>
                     <p><strong>Uso en el Programa:</strong> Reemplaza la consola por una experiencia visual. Dibuja las ventanas, botones y campos de texto, y captura las acciones del usuario (clics) para ejecutar la lógica del banco.</p>
-                    <strong>Métodos Clave y su Aplicación:</strong>
-                    <ul>
-                        <li><code>main()</code>: <strong>Inicia la aplicación gráfica</strong>, creando y mostrando la ventana principal del programa.</li>
-                        <li><code>crearLoginPanel() / crearMainMenuPanel()</code>: Se encargan de <strong>construir las diferentes pantallas</strong> de la interfaz (la de inicio de sesión y el menú principal del cliente).</li>
-                        <li><code>intentarLogin()</code>: Se ejecuta cuando el usuario <strong>hace clic en el botón "Iniciar Sesión"</strong>. Toma los datos de los campos de texto y los valida.</li>
-                        <li><code>accionDepositar() / accionRetirar()</code>: Son los manejadores de eventos para los botones de operaciones. Por ejemplo, <code>accionDepositar()</code> se activa al pulsar "Realizar Depósito" y <strong>muestra el diálogo para introducir el monto</strong>.</li>
-                    </ul>
-                </div>
             </div>
 
-            <div class="accordion-item">
-                <button class="accordion-header">Cliente.java</button>
-                <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Es la clase que actúa como <strong>modelo de datos</strong>. Representa la estructura y la información de un cliente.</p>
+            <div class="profile-container">
+                <img src="Imagenes/Alex.jpg" alt="Alex">
+                <p><strong><span>Hugo Ruiz</span></strong><i>Fundador y Desarrollador del Programa</i></p>
                     <p><strong>Uso en el Programa:</strong> Es el "plano" para cada usuario. Cada objeto <code>Cliente</code> almacena de forma organizada todos los datos de un usuario, que son manipulados por el resto del sistema.</p>
-                     <strong>Atributos y Métodos Clave:</strong>
-                    <ul>
-                        <li><strong>Atributos (ID, Nombre, Monto, etc.)</strong>: Son utilizados constantemente para <strong>mostrar la información del cliente en pantalla</strong> (en la consola o en la GUI) y para <strong>realizar cálculos</strong> en las transacciones.</li>
-                        <li><code>Depositar(monto)</code>: Este método es llamado directamente desde los menús (<code>Main</code> y <code>BancoUI</code>) para <strong>actualizar el saldo del cliente</strong> cuando se realiza un depósito.</li>
-                    </ul>
-                </div>
             </div>
         </main>
     </div>
