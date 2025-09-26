@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Usuario  Banco Financiero</title>
+    <title>Manual de Usuario - Banco Financiero</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,191 +24,102 @@
 
     <div class="container">
         <header>
-            <h1>Manual de Usuario: <span>Banco Financiero</span></h1>
-            <p>Guía interactiva para operar en nuestra plataforma de consola.</p>
+            <h1>Manual de Usuario: <span>Banco Financiero UI</span></h1>
+            <p>Guía interactiva para operar en nuestra plataforma de escritorio.</p>
         </header>
         <main>
             
             <div class="accordion-item">
-                <button class="accordion-header">1. Inicio de Sesión y Registro</button>
+                <button class="accordion-header">1. Pantalla de Bienvenida, Registro e Inicio de Sesión</button>
                 <div class="accordion-content">
-                    <p>Al iniciar el programa, se te presentará el menú principal. Desde aquí puedes acceder con una cuenta existente o crear una nueva.</p>
+                    <p>Al iniciar la aplicación, serás recibido por la pantalla de bienvenida. Esta es la primera ventana que verás y te ofrece las opciones principales para comenzar a operar.</p>
+                    <img src="Imagenes/Pantalla_Inicio.png" alt="Pantalla de bienvenida del banco" class="manual-image">
                     
-                    <p><strong>Para Registrar un Nuevo Cliente:</strong> Elige la opción '2'. El sistema te pedirá tus datos personales y generará automáticamente un ID y un número de tarjeta únicos para ti.</p>
-                    <pre><code>
-  Seleccione una opción: 2
+                    <p><strong>Para Registrar un Nuevo Cliente:</strong></p>
+                    <p>Al pulsar "Registrarse", aparecerá el siguiente formulario donde deberás completar tus datos para crear tu perfil de forma segura.</p>
+                    <img src="Imagenes/Registro.png" alt="Formulario de registro de cliente" class="manual-image">
 
-╭──────────────────────────────────╮
-│         REGISTRO DE CLIENTE      │
-╰──────────────────────────────────╯
-  > Ingrese su Nombre: Maria
-  > Ingrese su Apellido: Lopez
-  > Ingrese un monto inicial: 1500
-
-   ¡Registro exitoso!
-   - Cliente: Maria Lopez
-   - ID asignado: 3
-   - Nº Tarjeta: 4509881234567890
-   - Saldo Inicial: $1,500
-
-Presione Enter para continuar...</code></pre>
-
-                    <p><strong>Para Iniciar Sesión:</strong> Elige la opción '1' e introduce las credenciales que usaste durante el registro. El sistema validará cada dato para garantizar un acceso seguro.</p>
-                    <pre><code>
-  Seleccione una opción: 1
-
-╭──────────────────────────────────╮
-│          INICIO DE SESIÓN        │
-╰──────────────────────────────────╯
-  > Nº Tarjeta (16 dígitos): 5201169781530257
-  > ID de Cliente: 1
-  > Nombre: Juan
-  > Apellido: Perez
-
-   ¡Inicio de sesión exitoso! Bienvenido, Juan Perez
-
-Presione Enter para continuar...</code></pre>
+                    <p><strong>Para Iniciar Sesión:</strong></p>
+                    <p>Si eliges "Iniciar Sesión", se te dirigirá a la pantalla de acceso. Aquí debes introducir tu número de tarjeta y contraseña.</p>
+                     <img src="Imagenes/Inicio_Sesion.png" alt="Formulario de inicio de sesión" class="manual-image">
+                     <p>Al ingresar tus datos correctamente, recibirás un mensaje de bienvenida y podrás comenzar a operar.</p>
+                     <img src="Imagenes/PANTALLA_BANCOUI.png" alt="Mensaje de inicio de sesión exitoso" class="manual-image">
                 </div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-header">2. Panel Principal del Cliente</button>
                 <div class="accordion-content">
-                    <p>Una vez dentro, tu panel principal te mostrará un resumen claro de tu cuenta y una lista de las operaciones disponibles. Cada opción está numerada para facilitar la navegación.</p>
+                    <p>Una vez que inicies sesión, accederás a tu panel principal. Esta pantalla está diseñada para darte un control total sobre tu cuenta de forma clara y sencilla.</p>
+                    <img src="Imagenes/Screenshot 2025-09-25 233347.png" alt="Panel principal del cliente con saldo y opciones" class="manual-image">
+                    <p>En la parte superior, verás un resumen con tu <strong>nombre de cliente, tu saldo principal y tu saldo ahorrado</strong>.</p>
+                    <p>Debajo, encontrarás el menú de acciones con botones para todas las operaciones disponibles:</p>
                     <ul>
-                        <li><strong>Opciones 1-3:</strong> Operaciones transaccionales básicas.</li>
-                        <li><strong>Opciones 4-5:</strong> Consultas sobre tu actividad financiera.</li>
-                        <li><strong>Opción 6:</strong> Herramienta de ahorro a largo plazo.</li>
+                        <li><strong>Realizar Depósito</strong> — Añade fondos a tu cuenta principal.</li>
+                        <li><strong>Retirar Monto</strong> — Saca dinero de tu cuenta principal.</li>
+                        <li><strong>Transferir</strong> — Envía dinero a la cuenta de otro cliente.</li>
+                        <li><strong>Historial</strong> — Consulta tus transacciones pasadas.</li>
+                        <li><strong>Caja de Inversión</strong> — Gestiona tus ahorros y ve proyecciones de crecimiento.</li>
                     </ul>
-                    <pre><code>
-   ╔══════════════════════════════╗
-   ║        BANCO FINANCIERO      ║
-   ╠══════════════════════════════╣
-   ║ Cliente: Juan Perez         
-   ║ ID Cliente: 1                 
-   ║ Saldo: $7,500                 
-   ╠══════════════════════════════╣
-   ║ 1. Realizar deposito         ║
-   ║ 2. Retirar monto             ║
-   ║ 3. Realizar transferencia    ║
-   ║ 4. Ver movimientos           ║
-   ║ 5. Filtrar movimientos x monto ║
-   ║ 6. Ir a Caja de Ahorros      ║
-   ║ 7. Cerrar sesión             ║
-   ╚══════════════════════════════╝
-   > Seleccione opcion: </code></pre>
+                    <p>Finalmente, en la parte inferior, tienes el botón para <strong>Cerrar Sesión</strong> de forma segura.</p>
                 </div>
             </div>
             
             <div class="accordion-item">
-                <button class="accordion-header">3. Depósitos, Retiros y Transferencias</button>
+                <button class="accordion-header">3. Depósitos y Retiros</button>
                 <div class="accordion-content">
                     <p>Realiza tus operaciones diarias de forma sencilla. El sistema te guiará en cada paso y actualizará tu saldo automáticamente.</p>
-                    <p><strong>Ejemplo de Depósito:</strong></p>
-                    <pre><code>
-   > Seleccione opcion: 1
-   > Monto a depositar: 1000
-   > Saldo anterior: $7,500
-   > Saldo nuevo:    $8,500
-   > Depósito realizado con éxito.
+                    <p>La moneda utilizada en todas las transacciones es el <strong>Peso Mexicano (MXN)</strong>.</p>
+                    
+                    <p><strong>Cómo Realizar un Depósito:</strong></p>
+                    <p>Al hacer clic en "Realizar Depósito", se abrirá una ventana emergente para que ingreses el monto. Tras confirmar, recibirás una notificación de éxito.</p>
+                    <img src="Imagenes/Desposito.png" alt="Ventana para ingresar monto a depositar" class="manual-image">
+                    <img src="Imagenes/Deposito2.png" alt="Mensaje de depósito exitoso" class="manual-image">
+                    
+                    <p><strong>Cómo Realizar un Retiro:</strong></p>
+                    <p>Al seleccionar "Retirar Monto", aparecerá una ventana similar para introducir la cantidad. Si tienes fondos suficientes, la operación se completará y verás un mensaje de confirmación.</p>
+                    <img src="Imagenes/Retiro.png" alt="Ventana para ingresar monto a retirar" class="manual-image">
+                    <img src="Imagenes/Retiro2.png" alt="Mensaje de retiro exitoso" class="manual-image">
+                </div>
+            </div>
 
-Presione Enter para continuar...</code></pre>
-                    <p><strong>Ejemplo de Retiro:</strong></p>
-                    <pre><code>
-   > Seleccione opcion: 2
-   > Monto a retirar: 300
-   > Saldo anterior: $8,500
-   > Saldo nuevo:    $8,200
-   > Retiro realizado con éxito.
-
-Presione Enter para continuar...</code></pre>
-                    <p><strong>Ejemplo de Transferencia:</strong> Para máxima seguridad, el sistema te pedirá validar la identidad del destinatario con su Tarjeta y su ID antes de confirmar la transacción.</p>
-                    <pre><code>
-   > Seleccione opcion: 3
-
-   ╔══════════════════════════════╗
-   ║        TRANSFERENCIA         ║
-   ╠══════════════════════════════╣
-   ║ > Nº Tarjeta destinatario: 4509297861614535
-   ║ > ID destinatario: 2
-   ║ > Monto a transferir: 500
-   ║ ¡Transferencia realizada con éxito! ║
-   ╚══════════════════════════════╝
-
-Presione Enter para continuar...</code></pre>
+             <div class="accordion-item">
+                <button class="accordion-header">4. Transferencias a Otros Clientes</button>
+                <div class="accordion-content">
+                    <p>Para transferir fondos a otra cuenta, el sistema te pedirá tres datos clave para garantizar la máxima seguridad en la transacción. Tras rellenar los datos, recibirás una confirmación.</p>
+                    <img src="Imagenes/Transferencia.png" alt="Ventana para realizar una transferencia" class="manual-image">
+                    <img src="Imagenes/Transferencia2.png" alt="Mensaje de transferencia exitosa" class="manual-image">
                 </div>
             </div>
             
             <div class="accordion-item">
-                <button class="accordion-header">4. Historial de Movimientos</button>
+                <button class="accordion-header">5. Historial de Movimientos</button>
                 <div class="accordion-content">
-                    <p>Puedes consultar tu historial de dos formas. La vista estándar te muestra las transacciones más recientes primero, gracias a que se almacenan en una <strong>Pila (Stack)</strong>.</p>
-                    <p><strong>Historial Estándar (LIFO - Último en entrar, primero en salir):</strong></p>
-                    <pre><code>
-   > Seleccione una opción: 4
+                    <p>Al hacer clic en el botón "Historial", el sistema te preguntará cómo deseas visualizar tus transacciones.</p>
+                    <img src="Imagenes/Historial.png" alt="Opciones para ver el historial" class="manual-image">
 
-   ╠══════════════════════════════╣
-   ║     HISTORIAL DE MOVIMIENTOS     ║
-   ╠══════════════════════════════╣
-   ║ > Transferencia: $-500         ║
-   ║ > Retiro: $-300                ║
-   ║ > Depósito: $1000              ║
-   ╚══════════════════════════════╝
-
-Presione Enter para continuar...</code></pre>
-                    <p>Si necesitas analizar tus gastos, la opción "Filtrar por monto" utiliza un <strong>Árbol Binario</strong> para ordenar eficientemente tus transacciones, mostrando primero las salidas de dinero (negativos) de menor a mayor.</p>
-                    <p><strong>Movimientos ordenados por Monto:</strong></p>
-                    <pre><code>
-   > Seleccione una opción: 5
-
-   ╠══════════════════════════════╣
-   ║ Movimientos ordenados por monto: 
-   ║ $-500
-   ║ $-300
-   ║ $1000
-   ╚══════════════════════════════╝
-
-Presione Enter para continuar...</code></pre>
+                    <p><strong>Orden Cronológico:</strong> Esta opción te mostrará una lista de todos tus movimientos, comenzando por el más reciente.</p>
+                    <img src="Imagenes/Histroial_Cronologico.png" alt="Historial en orden cronológico" class="manual-image">
+                    
+                    <p><strong>Ordenar por Monto:</strong> Esta vista utiliza un <strong>Árbol Binario</strong> para ordenar eficientemente tus transacciones, mostrando primero los gastos y luego los ingresos.</p>
+                    <img src="Imagenes/Historial_menor,mayor.png" alt="Historial ordenado por monto" class="manual-image">
                 </div>
             </div>
             
             <div class="accordion-item">
-                <button class="accordion-header">5. Caja de Ahorros (¡con Recursividad!)</button>
+                <button class="accordion-header">6. Caja de Inversión y Proyecciones</button>
                 <div class="accordion-content">
-                    <p>La Caja de Ahorros es una cuenta separada para ayudarte a cumplir tus metas. Tiene su propio menú, donde el saldo máximo es de $500,000.</p>
-                     <p>Puedes calcular el crecimiento de tu dinero a futuro. Este cálculo se realiza con un <strong>algoritmo recursivo</strong> que proyecta el interés compuesto mes a mes.</p>
-                    <pre><code>
-   ╔══════════════════════════════╗
-   ║         CAJA DE AHORROS      ║
-   ╠══════════════════════════════╣
-   ║ Saldo Principal: $7,700        ║
-   ║ Saldo Ahorrado:  $0            ║
-   ╠══════════════════════════════╣
-   ║ 1. Depositar en Ahorros      ║
-   ║ 2. Retirar de Ahorros        ║
-   ║ 3. Ver Proyección de Ahorros ║
-   ║ 4. Volver al menú principal  ║
-   ╚══════════════════════════════╝
-   > Seleccione una opción: 1
-   > Monto a depositar (entero, mín. $100): 5000
-   > Depósito exitoso.
-
-Presione Enter para continuar...
-
-   (El menú se actualiza)
-   ╔══════════════════════════════╗
-   ║         CAJA DE AHORROS      ║
-   ╠══════════════════════════════╣
-   ║ Saldo Principal: $2,700        ║
-   ║ Saldo Ahorrado:  $5,000        ║
-   ╚══════════════════════════════╝
-   > Seleccione una opción: 3
-   > Proyección para $5000:
-   > - En 1 mes:   $5,029
-   > - En 6 meses: $5,178
-   > - En 1 año:   $5,361
-
-Presione Enter para continuar...</code></pre>
+                    <p>La <strong>Caja de Inversión</strong> te permite gestionar tus ahorros. Al entrar, verás el menú principal de la caja.</p>
+                    <img src="Imagenes/Caja_Ahorro.png" alt="Menú de la caja de ahorros" class="manual-image">
+                    <p>Desde aquí puedes <strong>depositar</strong> o <strong>retirar</strong> fondos de tu cuenta de ahorros a través de ventanas emergentes.</p>
+                    <img src="Imagenes/Caja_Ahorro_depo.png" alt="Depositar en caja de ahorros" class="manual-image">
+                    <img src="Imagenes/Caja_Ahorro_Reti.png" alt="Retirar de caja de ahorros" class="manual-image">
+                    <p>La opción más interesante es <strong>"Ver Proyección de Crecimiento"</strong>, que calcula el interés compuesto y te permite visualizarlo.</p>
+                    <img src="Imagenes/Proyeccion.png" alt="Proyección de crecimiento con opciones de gráficas" class="manual-image">
+                    <p>Al seleccionar una de las opciones, se generará una <strong>gráfica de barras</strong>, una <strong>gráfica lineal</strong> o una <strong>tabla detallada</strong> para un análisis completo de tu inversión.</p>
+                    <img src="Imagenes/Grafica.png" alt="Gráfica de barras de la proyección" class="manual-image">
+                    <img src="Imagenes/GraficaLineal.png" alt="Gráfica lineal de la proyección" class="manual-image">
+                    <img src="Imagenes/Tabladecajainversion.png" alt="Tabla detallada de la proyección" class="manual-image">
                 </div>
             </div>
         </main>
