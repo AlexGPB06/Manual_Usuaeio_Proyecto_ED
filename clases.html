@@ -29,19 +29,6 @@
         </header>
         <main>
 
-            <div class="accordion-item">
-                <button class="accordion-header">Main.java</button>
-                <div class="accordion-content">
-                    <p><strong>Descripción:</strong> Es el <strong>punto de entrada y el cerebro</strong> de la versión de consola de la aplicación. Orquesta todo el flujo del programa.</p>
-                    <p><strong>Uso en el Programa:</strong> Inicia el sistema, carga los clientes iniciales y presenta los menús de texto al usuario para que interactúe.</p>
-                    <strong>Métodos Clave y su Aplicación:</strong>
-                    <ul>
-                        <li><code>main()</code>: Es el primer método que se ejecuta. Su función es <strong>arrancar la aplicación</strong>, crear la tabla hash de clientes y mostrar el menú de bienvenida (login/registro).</li>
-                        <li><code>mostrarMenuDelBanco()</code>: Se activa <strong>después de un inicio de sesión exitoso</strong>. Contiene el bucle principal con las opciones bancarias (depositar, retirar, etc.) y gestiona las llamadas a las funciones correspondientes.</li>
-                        <li><code>iniciarSesion() / registrarCliente()</code>: Se utilizan en el menú de bienvenida para <strong>controlar el acceso y la creación de nuevos usuarios</strong>, validando los datos introducidos por el usuario.</li>
-                    </ul>
-                </div>
-            </div>
 
             <div class="accordion-item">
                 <button class="accordion-header">BancoUI.java</button>
@@ -86,7 +73,7 @@
             </div>
 
             <div class="accordion-item">
-                <button class="accordion-header">Stack.java (Pila)</button>
+                <button class="accordion-header">Stack.java</button>
                 <div class="accordion-content">
                     <p><strong>Descripción:</strong> Implementa una estructura de datos LIFO (Last-In, First-Out).</p>
                     <p><strong>Uso en el Programa:</strong> Es el motor del <strong>Historial de Movimientos</strong>, mostrando siempre la transacción más reciente primero.</p>
@@ -99,7 +86,7 @@
             </div>
 
             <div class="accordion-item">
-                <button class="accordion-header">Queue.java (Cola)</button>
+                <button class="accordion-header">Queue.java</button>
                 <div class="accordion-content">
                     <p><strong>Descripción:</strong> Implementa una estructura de datos FIFO (First-In, First-Out), donde el primer elemento en entrar es el primero en salir.</p>
                     <p><strong>Uso en el Programa:</strong> Gestiona las transferencias para que puedan ser procesadas en el orden en que se solicitaron.</p>
@@ -159,6 +146,75 @@
                     <ul>
                         <li><code>encontrarClienteMayorSaldo(clientes, inicio, fin)</code>: Este es el método de "divide y vencerás" que se llama cuando el usuario selecciona la opción 7 del menú. <strong>Divide la lista de clientes a la mitad repetidamente</strong> para encontrar de forma eficiente al cliente con el saldo más alto.</li>
                         <li><code>calcularInteresCompuesto(capital, tasa, tiempo)</code>: Es el método recursivo utilizado en la <strong>"Caja de Ahorros"</strong> para calcular y mostrar la proyección de crecimiento de la inversión del usuario.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">BusquedaBancaria.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Clase de utilidad que agrupa diferentes algoritmos de búsqueda para encontrar clientes.</p>
+                    <p><strong>Uso en el Programa:</strong> Proporciona la lógica para buscar clientes en el sistema utilizando diferentes criterios y algoritmos, además de comparar su rendimiento.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>busquedaLinealPorID() / busquedaLinealPorNombre()</code>: Implementan una búsqueda secuencial simple para encontrar un cliente.</li>
+                        <li><code>busquedaBinariaPorID()</code>: Realiza una búsqueda mucho más eficiente en un arreglo de clientes previamente ordenado, demostrando la ventaja de los algoritmos logarítmicos.</li>
+                        <li><code>compararMetodosBusqueda()</code>: Ejecuta y mide el tiempo de las búsquedas lineal y binaria para mostrar cuál es más rápida en la práctica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">OrdenamientoBancario.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Contiene implementaciones de algoritmos de ordenamiento para organizar arreglos de clientes.</p>
+                    <p><strong>Uso en el Programa:</strong> Se utiliza para ordenar la lista de clientes según diferentes atributos como el saldo, el ID o el nombre, y para comparar la eficiencia entre algoritmos.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>quickSortPorSaldo() / quickSortPorID()</code>: Utiliza el algoritmo QuickSort, conocido por su alta eficiencia en promedio, para ordenar clientes por su saldo o ID.</li>
+                        <li><code>mergeSortPorNombre()</code>: Implementa el algoritmo MergeSort, que es muy estable y eficiente, para ordenar a los clientes alfabéticamente por su nombre.</li>
+                        <li><code>compararAlgoritmos()</code>: Mide y compara los tiempos de ejecución de QuickSort y MergeSort para demostrar sus diferencias de rendimiento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">GrafoBancario.java y GrafoTransacciones.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Estas clases implementan estructuras de datos de tipo Grafo para modelar las relaciones entre clientes y monitorear la actividad financiera en busca de anomalías.</p>
+                    <p><strong>Uso en el Programa:</strong> Son herramientas avanzadas para el análisis de seguridad y la detección de fraudes.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>GrafoBancario.buscarCaminoBFS() / DFS()</code>: Utiliza algoritmos de recorrido de grafos para determinar si existe una ruta de transacciones entre dos clientes.</li>
+                        <li><code>GrafoBancario.detectarCiclos()</code>: Una función crucial para la seguridad, ya que puede identificar patrones de transferencias circulares que a menudo indican lavado de dinero o fraude.</li>
+                        <li><code>GrafoTransacciones.verificarActividadSospechosa()</code>: Es el núcleo del sistema de alerta. Revisa si un cliente realiza demasiadas transacciones en un corto período de tiempo, un indicador común de una tarjeta comprometida.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">CSVPathResolver.java y CSVClientLoader.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Clases responsables de la persistencia de datos. Se encargan de encontrar, leer y escribir la información de los clientes en el archivo <code>clientes.csv</code>.</p>
+                    <p><strong>Uso en el Programa:</strong> Son el puente entre la aplicación y el almacenamiento en disco, asegurando que los datos de los clientes se carguen al iniciar y se guarden al registrar nuevos usuarios.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>CSVPathResolver.obtenerRutaCSV()</code>: Aumenta la robustez del programa al buscar el archivo <code>clientes.csv</code> en múltiples directorios, evitando errores si el programa se ejecuta desde diferentes ubicaciones.</li>
+                        <li><code>CSVClientLoader.cargarClientes()</code>: Se ejecuta al inicio para leer el archivo CSV, crear los objetos <code>Cliente</code> y cargarlos en la HashTable del sistema.</li>
+                        <li><code>CSVClientLoader.guardarCliente()</code>: Se llama durante el registro para añadir la información del nuevo cliente al final del archivo CSV.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">Transaccion.java</button>
+                <div class="accordion-content">
+                    <p><strong>Descripción:</strong> Es una clase de modelo de datos (POJO) que representa una única transacción financiera.</p>
+                    <p><strong>Uso en el Programa:</strong> Encapsula toda la información de una operación (ID, tarjeta, monto, tipo, fecha). Estos objetos son utilizados por el <code>GrafoTransacciones</code> para llevar un registro detallado de la actividad de cada cliente.</p>
+                    <strong>Métodos Clave y su Aplicación:</strong>
+                    <ul>
+                        <li><code>Transaccion(id, tarjeta, monto, tipo)</code>: Es el constructor para crear un nuevo objeto de transacción cada vez que se realiza una operación.</li>
+                        <li><code>Getters (getMonto, getTipo, etc.)</code>: Permiten a otras clases, como el sistema de detección de fraude, acceder a los detalles de la transacción para su análisis.</li>
                     </ul>
                 </div>
             </div>

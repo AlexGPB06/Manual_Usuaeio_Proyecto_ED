@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quienes Somos - Banco Financiero</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="quien.css"> </head>
 <body>
     
 <nav>
@@ -21,98 +20,46 @@
         </ul>
     </div>
 </nav>
-<style>
-/* Ensure proper background and container centering */
-body {
-    background-color: #f4f7f6;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
 
-/* Ensure main container is centered */
-.container {
-    max-width: 1200px !important;
-    margin: 2rem auto !important;
-    padding: 2.5rem !important;
-    background: white !important;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 90% !important; /* Ensure it doesn't take full width on small screens */
-}
-
-.profile-container {
-    border: 2px solid #ddd;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 2rem;
-    margin: 2rem 0;
-}
-
-.profile-container::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.profile-container img {
-    float: left;
-    margin-right: 20px;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-}
-
-.profile-container span {
-    font-size: 1.2rem;
-    margin-right: 15px;
-    color: var(--primary-color);
-}
-
-/* Profile container with image on the right */
-.profile-container.image-right img {
-    float: right;
-    margin-left: 20px;
-    margin-right: 0;
-}
-
-@media (max-width: 768px) {
-    .profile-container {
-        text-align: center;
-    }
-    .profile-container img {
-        margin: 0 auto 1rem auto;
-        float: none;
-        display: block;
-    }
-}
-</style>
     <div class="container">
         <header>
             <h1>Nosotros</h1>
-            <p>Informacion sobre las personas que trabajaron en este Proyecto.</p>
+            <p>Información sobre las personas que trabajaron en este Proyecto.</p>
             <p>O el equipo llamado <strong>Los Descompiladores</strong></p>
         </header>
+
         <main>
+            <section>
+                <h2>Nuestro Objetivo</h2>
+                <p>Crear una simulación bancaria robusta, segura y fácil de usar que sirva como una demostración práctica de principios fundamentales de la informática, incluyendo estructuras de datos, algoritmos avanzados, y programación orientada a objetos.</p>
+                <h2 style="margin-top: 2rem;">¿A Quién va Dirigido?</h2>
+                <p>Este programa está diseñado para estudiantes de programación, entusiastas de la informática y cualquier persona interesada en aprender cómo se arquitecta el software bancario, desde la lógica del servidor (backend) hasta la interfaz gráfica con la que interactúa el usuario (frontend).</p>
+            </section>
 
             <div class="profile-container">
-                    <img src="Imagenes/Majorek.jpg" alt="KEROJAM">
-                    <p><strong><span>Majorek Casas</span></strong><i>Fundador y Desarrollador del Programa</i></p>
-                    <p><strong>Uso en el Programa:</strong> Inicia el sistema, carga los clientes iniciales y presenta los menús de texto al usuario para que interactúe.</p>
-            </div>
-
-            <div class="profile-container image-right">
-                <img src="Imagenes/Alex.jpg" alt="Hugoat">
-                <p><strong><span>Alex Garcia</span></strong> <i>Fundador y Desarrollador del Programa</i></p>
-                    <p><strong>Uso en el Programa:</strong> Reemplaza la consola por una experiencia visual. Dibuja las ventanas, botones y campos de texto, y captura las acciones del usuario (clics) para ejecutar la lógica del banco.</p>
+                <img src="Imagenes/Majorek.jpg" alt="Majorek Casas">
+                <div>
+                    <p><strong><span>Majorek Casas</span></strong><i> — Ingeniero de Software (Backend)</i></p>
+                    <p><strong>Responsabilidades:</strong> Como desarrollador backend, mi enfoque es construir el motor central del sistema. Me encargo de la lógica de negocio, la versión de consola y la implementación de las estructuras de datos que aseguran que el banco opere de manera eficiente y segura.</p>
+                </div>
             </div>
 
             <div class="profile-container">
-                <img src="Imagenes/Hugo.jpg" alt="Alex">
-                <p><strong><span>Hugo Ruiz</span></strong><i>Fundador y Desarrollador del Programa</i></p>
-                    <p><strong>Uso en el Programa:</strong> Es el "plano" para cada usuario. Cada objeto <code>Cliente</code> almacena de forma organizada todos los datos de un usuario, que son manipulados por el resto del sistema.</p>
+                <img src="Imagenes/Alex.jpg" alt="Alex Garcia">
+                <div>
+                    <p><strong><span>Alex Garcia</span></strong> <i>— Ingeniero de Software (GUI)</i></p>
+                    <p><strong>Responsabilidades:</strong> Mi trabajo es crear la experiencia de usuario a través de la interfaz gráfica (GUI). Diseño y programo las ventanas, botones y elementos visuales con los que el cliente interactúa, asegurando que la aplicación sea intuitiva, atractiva y funcional.</p>
+                </div>
             </div>
+
+            <div class="profile-container">
+                <img src="Imagenes/Hugo.jpg" alt="Hugo Ruiz">
+                <div>
+                    <p><strong><span>Hugo Ruiz</span></strong><i> — Arquitecto de Software y Datos</i></p>
+                    <p><strong>Responsabilidades:</strong> Me especializo en el modelado de datos. Fui responsable de diseñar la clase <code>Cliente</code>, que es el pilar sobre el cual se construyen todas las operaciones. Mi labor asegura que la información del usuario se maneje de forma organizada, coherente y escalable.</p>
+                </div>
+            </div>
+            
         </main>
     </div>
     

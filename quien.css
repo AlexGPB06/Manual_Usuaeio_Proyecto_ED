@@ -1,0 +1,176 @@
+/* --- Estilos Generales y Variables --- */
+:root {
+    --primary-color: #005A9C;
+    --secondary-color: #00A9E0;
+    --surface-color: rgba(255, 255, 255, 0.6); /* Color para efecto cristal */
+    --text-color: #2c3e50;
+    --light-gray: rgba(255, 255, 255, 0.4); /* Borde sutil para el efecto cristal */
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* --- Animación Dinámica de Entrada --- */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Fondo con gradiente elegante */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* === Barra de Navegación (Estilo consistente) === */
+nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+nav ul { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
+nav ul li { margin-left: 25px; }
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+nav ul li a:hover { color: var(--primary-color); transform: translateY(-2px); }
+nav ul li a.active { background-color: var(--primary-color); color: white; }
+
+/* --- Contenedor Principal --- */
+.container {
+    max-width: 1000px; /* Un poco más estrecho para mejor lectura */
+    margin: 4rem auto;
+    padding: 3rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    /* Título con gradiente */
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+header p { color: #555; font-size: 1.2rem; }
+
+/* --- Estilos para la sección de perfiles con efecto cristal --- */
+.profile-container {
+    background: var(--surface-color);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--light-gray);
+    box-shadow: var(--shadow-glass);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    transition: all 0.4s ease;
+    
+    /* Aplicamos la animación */
+    opacity: 0;
+    animation: fadeInSlideUp 0.6s ease-out forwards;
+}
+
+.profile-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Retraso en la animación para cada perfil */
+.profile-container:nth-of-type(1) { animation-delay: 0.2s; }
+.profile-container:nth-of-type(2) { animation-delay: 0.4s; }
+.profile-container:nth-of-type(3) { animation-delay: 0.6s; }
+
+.profile-container img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+.profile-container:hover img {
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.profile-container span {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.profile-container i {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Estilos para la sección "Nuestro Objetivo" */
+main section {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+main section h2 {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+main section p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #444;
+}
