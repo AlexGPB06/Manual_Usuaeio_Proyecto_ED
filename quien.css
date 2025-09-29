@@ -95,6 +95,7 @@ header h1 {
     /* Título con gradiente */
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
+    background-clip: text; /* Compatibilidad estándar */
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
@@ -149,28 +150,30 @@ header p { color: #555; font-size: 1.2rem; }
     font-size: 1.4rem;
 }
 
-.profile-container i {
-    color: var(--primary-color);
-    font-weight: 500;
+/* === Responsivo: móviles y tablets === */
+@media (max-width: 992px) {
+  .nav-container { padding: 0 1rem; }
+  .container { margin: 2rem 1rem; padding: 2rem; }
+  header h1 { font-size: 2.6rem; }
 }
 
-/* Estilos para la sección "Nuestro Objetivo" */
-main section {
-    text-align: center;
-    margin-bottom: 4rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--light-gray);
+@media (max-width: 768px) {
+  .nav-container { flex-wrap: wrap; gap: 0.75rem; }
+  nav ul { flex-wrap: wrap; gap: 8px; }
+  nav ul li { margin-left: 0; }
+  nav ul li a { font-size: 1rem; padding: 6px 10px; }
+
+  .container { margin: 1.25rem; padding: 1.25rem; }
+  header { margin-bottom: 2rem; }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
+
+  .profile-container { flex-direction: column; text-align: center; gap: 16px; }
+  .profile-container img { width: 96px; height: 96px; }
 }
 
-main section h2 {
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 2rem;
-}
-
-main section p {
-    max-width: 750px;
-    margin: 0 auto;
-    color: #444;
+@media (max-width: 480px) {
+  .nav-logo a { font-size: 1.25rem; }
+  .container { margin: 1rem; padding: 1rem; }
+  header h1 { font-size: 1.7rem; }
 }
